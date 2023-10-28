@@ -69,9 +69,9 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 let testArray = [2, 3, 4]; //eslint-disable-line
 
-// function sumArray(sumArr) { //eslint-disable-line
-function sumArray(numbers) {
-  // Define a custom sum function to add numbers
+function sumArray(sumArr) { //eslint-disable-line
+
+
   function customSum(a, b) {
     if (b === 0) {
       return a;
@@ -80,13 +80,12 @@ function sumArray(numbers) {
     }
   }
 
-  // Calculate the sum of the numbers in the array using customSum function
-  const sum = numbers.reduce(customSum, 0);
+  
+  const sum = sumArr.reduce(customSum, 0);
 
-  // Create the result string
-  const resultString = `${numbers.join(',')} was passed in as an array of numbers, and ${sum} is their sum.`;
+  const resultString = `${sumArr.join(',')} was passed in as an array of numbers, and ${sum} is their sum.`;
 
-  // Return an array with the sum and the result string
+
   return [sum, resultString];
 }
 // }
