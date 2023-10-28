@@ -141,10 +141,28 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
 
+  function customMultiply(a, b) {
+    if (b === 0) {
+      return 0;
+    } else {
+      return a + customMultiply(a, b - 1);
+    }
+  }
+
+
+  const product = multArr.reduce(customMultiply, 1);
+
+
+  const numberString = multArr.join(',');
+  const resultString = `The numbers ${numberString} have a product of ${product}.`;
+
+
+  return [product, resultString];
 }
 
+
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop.
 
