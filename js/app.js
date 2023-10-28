@@ -69,13 +69,31 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 let testArray = [2, 3, 4]; //eslint-disable-line
 
-function sumArray(sumArr) { //eslint-disable-line
+// function sumArray(sumArr) { //eslint-disable-line
+function sumArray(numbers) {
+  // Define a custom sum function to add numbers
+  function customSum(a, b) {
+    if (b === 0) {
+      return a;
+    } else {
+      return customSum(a ^ b, (a & b) << 1);
+    }
+  }
 
+  // Calculate the sum of the numbers in the array using customSum function
+  const sum = numbers.reduce(customSum, 0);
+
+  // Create the result string
+  const resultString = `${numbers.join(',')} was passed in as an array of numbers, and ${sum} is their sum.`;
+
+  // Return an array with the sum and the result string
+  return [sum, resultString];
 }
+// }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -97,7 +115,7 @@ function multiplyArray(multArr) { //eslint-disable-line
 // Here is the test for multiplyArray(); uncomment it to run it
 // testMultiplyArray(testArray);
 
-// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
+// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop.
 
 // You're done! Submit the link to the repo following the instructions in Canvas. Or, try out the stretch goal below...
 
